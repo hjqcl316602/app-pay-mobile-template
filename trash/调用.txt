@@ -1,0 +1,4 @@
+http://dev.bstchain.com/pay/pay/recharge.do?appId=w0025c0d0cbf&channelId=2&channelOrderId=1&fee=10000&subMemId=1&dealName=song&token=1CCEAD74CA38DC105A9345D88EE78CE2E25F3ED16AB3F47E5FE78BB096A45DAF1E75966A822C0D9CE07DC0FBBAD7719C
+
+channelId ： 支付方式 [ 银行卡，微信，支付宝，云闪付]
+fee：钱 分

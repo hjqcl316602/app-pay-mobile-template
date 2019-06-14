@@ -1,0 +1,100 @@
+
+@import './theme.less';
+
+
+/******************************** 高度随宽度自适应 ***********************************/
+.rp-ratio{}
+.rp-ratio__outer{  position: relative;  height: 0;  width: 100%;  }
+.rp-ratio__inner{ width: 100%;height:100% ; position: absolute;left: 0;top:0; z-index:1}
+.rp-ratio__outer[data-ratio='1:1'],.rp-ratio__outer[data-ratio='100%']{  padding-top:100%;  }
+.rp-ratio__outer[data-ratio='2:1'],.rp-ratio__outer[data-ratio='50%']{  padding-top:50%;  }
+.rp-ratio__outer[data-ratio='10:7'],.rp-ratio__outer[data-ratio='70%']{  padding-top:70%;  }
+.rp-ratio__inner.rp-ratio--up{ z-index: 10; }
+
+
+/******************************** 图片 ***********************************/
+
+
+.rp-img__inner {  height:100%;width:100%;overflow: hidden;position: relative;  }
+.rp-img__inner img,
+.rp-img__inner img.rp-img--center{ position: absolute ; top:50% ; left:50% ; transform: translate(-50%,-50%) ; };
+.rp-img__inner img.rp-img--max{ max-width: 100%;max-height: 100% }
+.rp-img__inner img.rp-img--cover{ width: 100%;height: 100% }
+
+.rp-img--icon.rp-img--pay{ width:30px;height:30px; }
+.rp-img--icon.rp-img--status{ width:60px;height:auto; }
+
+/******************************** 背景 ***********************************/
+.rp-bg,.rp-bg--normal{
+  background-color: #fff;
+}
+
+/******************************** 支付页面 ***********************************/
+
+.rp-text--ali {
+  color:@color-ali
+}
+
+.rp-text--wx {
+  color:@color-wx
+}
+
+.rp-text--card {
+  color:@color-card
+}
+
+.rp-text--union {
+  color:@color-union
+}
+
+.rp-text--wihte-light{
+  color:fade(#fff,50)
+}
+
+.rp-fuild { width: 100vw; max-width: 400px;margin: 0 auto ;min-height: 100vh;}
+
+.rp-pay{
+  height:100vh;width: 100vw;padding: 40px;max-width: 400px;margin: 0 auto
+}
+
+.rp-pay.rp-pay--ali{
+  background-color: @color-ali
+}
+
+.rp-pay.rp-pay--wx{
+  background-color: @color-wx
+}
+
+.rp-pay.rp-pay--card{
+  background-color: @color-card
+}
+
+.rp-pay.rp-pay--union{
+  background-color: @color-union
+}
+
+.rp-pay--inner,.rp-pay--content{
+  background-color: #fff;border-radius: 10px;
+} 
+
+.rp-pay--card .rp-pay--content {
+  box-shadow: 0 0px 10px fade(@color-card,30)
+}
+.rp-pay--wx .rp-pay--content {
+  box-shadow: 0 0px 10px fade(@color-wx,30)
+}
+.rp-pay--ali .rp-pay--content {
+  box-shadow: 0 0px 10px fade(@color-ali,30)
+}
+.rp-pay--union .rp-pay--content {
+  box-shadow: 0 0px 10px fade(@color-union,30)
+}
+
+
+.rp-pay--icon{
+  background-color: #fff;border-radius: 5px;padding: 5px;
+}
+
+ .rp-pay--mask{
+   width: 100vw;height:100vh;position: fixed;background-color: rgba(0,0,0,.6);z-index: 999
+ }

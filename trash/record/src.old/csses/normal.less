@@ -1,0 +1,311 @@
+
+
+
+//************************************************************************ 重置  ****************************************************************************************/
+
+@import 'theme';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    background-color:@color-bgd;
+    font-family: -apple- system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    -webkit-backface-visibility: hidden;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+a:focus,
+a:hover,
+a:active {
+    color: #23527c;
+    text-decoration: underline;
+    outline: 0;
+}
+
+li {
+    list-style: none;
+}
+
+u,
+ins {
+    text-decoration: underline
+}
+
+strong {
+    font-weight: 800
+}
+
+textarea,
+input,
+i {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+}
+//************************************************************************ 文本  ****************************************************************************************/
+
+
+.rc-text { font-size: 14px; line-height:  1 }
+.rc-text--no          { font-size: 0 }
+.rc-text--mi,h6       { font-size: 10px }
+.rc-text--sm,h5       { font-size: 12px }
+.rc-text--md,h4       { font-size: 14px }
+.rc-text--lg,h3       { font-size: 16px }
+.rc-text--xl,h2       { font-size: 18px }
+.rc-text--xl-x ,h1    { font-size: 20px }
+.rc-text--xl-xx       { font-size: 24px }
+.rc-text--xl-xxx      { font-size: 30px }
+.rc-text--xl-xxxx    { font-size: 40px }
+//字体颜色
+.rc-text--theme     {  color:@color-theme  }        // 普通
+.rc-text--warning   {  color:@color-warning  }      // 警告
+.rc-text--danger    {  color:@color-danger  }       // 危险
+.rc-text--success   {  color:@color-success  }      // 成功
+.rc-text--info      {  color:@color-info  }         // 替换样式
+
+.rc-text--dark      {  color:@color-dark  }         // 黑色
+.rc-text--light     {  color:@color-light  }        // 浅灰
+.rc-text--gray      {  color:@color-gray  }         //深灰
+.rc-text--white     {  color:@color-white  }        //白色
+.rc-text--black     {  color:#000  }                 //黑色
+// 居中对齐方式
+.rc-text--center{  text-align: center;  }
+.rc-text--left  {  text-align: left;  }
+.rc-text--right {  text-align: right;  }
+// 加粗
+.rc-text--bold ,strong{  font-weight: 800; }
+//倾斜
+.rc-text--italic ,i { font-style:italic; }
+//文本缩进
+.rc-text--indent  {  text-indent: 5px}
+//文本换行方式
+
+.rc-text--nowrap { white-space:nowrap; } // 不换行
+.rc-text--wrap{  word-wrap: break-word; word-break: normal; }  // 自动换行
+.rc-text--break   { word-break:break-all; }  // 强制换行
+//行高
+.rc-text--baseline--mi{ line-height: 1 }// 1 1.2 1.5 1.8 2 2.5
+.rc-text--baseline--sm{ line-height: 1.2 }
+.rc-text--baseline,.rc-text--baseline--md{ line-height: 1.5 }
+.rc-text--baseline--pl{ line-height: 1.8 }
+.rc-text--baseline--lg{ line-height: 2 }
+.rc-text--baseline--xl{ line-height: 2.5 }
+
+// 改变大小写
+.rc-text--lowercase{ text-transform: lowercase }
+.rc-text--uppercase{ text-transform: uppercase }
+.rc-text--capitalize{ text-transform: capitalize }
+//可见行
+.rc-text--ellipsis {  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;  } // 不能是flex：1布局下使用 , 得用block，inline-block来包裹
+.rc-text--clamp {  display: -webkit-box;  overflow: hidden; -webkit-box-orient: vertical;  -webkit-line-clamp: 2;    }
+
+//************************************************************************ 布局  ****************************************************************************************/
+
+//********* 栅格化 **********/
+.rc-row::before {     display: table;  content: " "  ;  clear: both;}
+.rc-row::after {     display: table;  content: " "  ;  clear: both;}
+.rc-row[data-gutter='10']{ margin-left: -5px;margin-right: -5px;}
+.rc-row[data-gutter='10'] [class^=rc-col-]{ padding-left: 5px;padding-right: 5px;}
+.rc-row[data-gutter='20']{ margin-left: -10px;margin-right: -10px;}
+.rc-row[data-gutter='20'] [class^=rc-col-]{ padding-left: 10px;padding-right: 10px;}
+
+
+.rc-col--01{ float: left ;position: relative;  min-height: 1px ; width: 1 / 24 * 100%  }
+.rc-col--02{ float: left ;position: relative;  min-height: 1px ; width: 2 / 24 * 100%  }
+.rc-col--03{ float: left ;position: relative;  min-height: 1px ; width: 3 / 24 * 100%  }
+.rc-col--04{ float: left ;position: relative;  min-height: 1px ; width: 4 / 24 * 100%  }
+.rc-col--05{ float: left ;position: relative;  min-height: 1px ; width: 5 / 24 * 100%  }
+.rc-col--06{ float: left ;position: relative;  min-height: 1px ; width: 6 / 24 * 100%  }
+.rc-col--07{ float: left ;position: relative;  min-height: 1px ; width: 7 / 24 * 100%  }
+.rc-col--08{ float: left ;position: relative;  min-height: 1px ; width: 8 / 24 * 100%  }
+.rc-col--09{ float: left ;position: relative;  min-height: 1px ; width: 9 / 24 * 100%  }
+.rc-col--10{ float: left ;position: relative;  min-height: 1px ; width: 10 / 24 * 100%  }
+.rc-col--11{ float: left ;position: relative;  min-height: 1px ; width: 11 / 24 * 100%  }
+.rc-col--12{ float: left ;position: relative;  min-height: 1px ; width: 12 / 24 * 100%  }
+.rc-col--13{ float: left ;position: relative;  min-height: 1px ; width: 13 / 24 * 100%  }
+.rc-col--14{ float: left ;position: relative;  min-height: 1px ; width: 14 / 24 * 100%  }
+.rc-col--15{ float: left ;position: relative;  min-height: 1px ; width: 15 / 24 * 100%  }
+.rc-col--16{ float: left ;position: relative;  min-height: 1px ; width: 16 / 24 * 100%  }
+.rc-col--17{ float: left ;position: relative;  min-height: 1px ; width: 17 / 24 * 100%  }
+.rc-col--18{ float: left ;position: relative;  min-height: 1px ; width: 18 / 24 * 100%  }
+.rc-col--19{ float: left ;position: relative;  min-height: 1px ; width: 19 / 24 * 100%  }
+.rc-col--20{ float: left ;position: relative;  min-height: 1px ; width: 20 / 24 * 100%  }
+.rc-col--21{ float: left ;position: relative;  min-height: 1px ; width: 21 / 24 * 100%  }
+.rc-col--22{ float: left ;position: relative;  min-height: 1px ; width: 22 / 24 * 100%  }
+.rc-col--23{ float: left ;position: relative;  min-height: 1px ; width: 23 / 24 * 100%  }
+.rc-col--24{ float: left ;position: relative;  min-height: 1px ; width: 24 / 24 * 100%  }
+
+.rc-col--offset-01{  margin-left: 1 / 24 * 100%  }
+.rc-col--offset-02{  margin-left: 2 / 24 * 100%  }
+.rc-col--offset-03{  margin-left: 3 / 24 * 100%  }
+.rc-col--offset-04{  margin-left: 4 / 24 * 100%  }
+.rc-col--offset-05{  margin-left: 5 / 24 * 100%  }
+.rc-col--offset-06{  margin-left: 6 / 24 * 100%  }
+.rc-col--offset-07{  margin-left: 7 / 24 * 100%  }
+.rc-col--offset-08{  margin-left: 8 / 24 * 100%  }
+.rc-col--offset-09{  margin-left: 9 / 24 * 100%  }
+.rc-col--offset-10{  margin-left: 10 / 24 * 100%  }
+.rc-col--offset-11{  margin-left: 11 / 24 * 100%  }
+.rc-col--offset-12{  margin-left: 12 / 24 * 100%  }
+.rc-col--offset-13{  margin-left: 13 / 24 * 100%  }
+.rc-col--offset-14{  margin-left: 14 / 24 * 100%  }
+.rc-col--offset-15{  margin-left: 15 / 24 * 100%  }
+.rc-col--offset-16{  margin-left: 16 / 24 * 100%  }
+.rc-col--offset-17{  margin-left: 17 / 24 * 100%  }
+.rc-col--offset-18{  margin-left: 18 / 24 * 100%  }
+.rc-col--offset-19{  margin-left: 19 / 24 * 100%  }
+.rc-col--offset-20{  margin-left: 20 / 24 * 100%  }
+.rc-col--offset-21{  margin-left: 21 / 24 * 100%  }
+.rc-col--offset-22{  margin-left: 22 / 24 * 100%  }
+.rc-col--offset-23{  margin-left: 23 / 24 * 100%  }
+.rc-col--offset-24{  margin-left: 24 / 24 * 100%  }
+
+//********* flex **********/
+.rc-flex { display: flex }
+.rc-flex--fit{  flex:1  }
+.rc-flex--fix{  flex: 0  }
+.rc-flex--aut{  flex: auto ;width: auto; }
+
+// 常用 垂直水平居中
+.rc-flex--center{display: flex; justify-content: center; align-items: center }
+.rc-flex--between-center{display: flex; justify-content: space-between; align-items: center }
+// justify-content属性定义了项目在主轴上的对齐方式。
+.rc-content--center{  justify-content: center;  }
+.rc-content--start{  justify-content: flex-start;  }
+.rc-content--end{  justify-content: flex-end;  }
+.rc-content--around{  justify-content: space-around;  }
+.rc-content--between{  justify-content: space-between;  }
+// align-items属性定义项目在交叉轴上如何对齐
+.rc-items--center{  align-items: center }
+.rc-items--start{  align-items: flex-start }
+.rc-items--end{  align-items: flex-end }
+.rc-items--baseline {  align-items: baseline  }
+.rc-items--stretch{  align-items: stretch }
+//align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+.rc-align-content--center{ align-content: center}
+.rc-align-content--start{ align-content: flex-start }
+.rc-align-content--end{ align-content: flex-end }
+.rc-align-content--around{ align-content: space-around}
+.rc-align-content--between{ align-content: space-between}
+.rc-align-content--stretch{ align-content: stretch}
+//默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行
+.rc-wrap--nowrap{ flex-wrap: nowrap }
+.rc-wrap--wrap{ flex-wrap: wrap }
+.rc-wrap--wrap-reverse{ flex-wrap: wrap-reverse }
+//flex-direction属性决定主轴的方向（即项目的排列方向）
+.rc-direction--row{flex-direction: row}
+.rc-direction--row-reverse{flex-direction: row-reverse}
+.rc-direction--column{flex-direction: column}
+.rc-direction--column-reverse{flex-direction: column-reverse}
+
+//************************************************************************ 全屏  ****************************************************************************************/
+
+.rc-cover   { width: 100%;height:100% ; }
+.rc-cover--w   { width: 100% ; }
+.rc-cover--h   { height: 100% ; }
+.rc-cover--h-min  { min-height: 100% ; }
+.rc-cover--h-max  { max-height: 100% ; }
+
+.rc-fluid { width: 100vw;height:100vh; }
+.rc-fluid--w { width: 100vw; }
+.rc-fluid--h { height:100vh; }
+.rc-fluid--h-min { min-height:100vh; }
+.rc-fluid--h-max { max-height: 100vh; }
+
+//************************************************************************ border 手机端 *****************************************/
+.rc-border--dashed,
+.rc-border--ud,
+.rc-border--bm,
+.rc-border--lt,
+.rc-border--rt,
+.rc-border--tp,
+.rc-border{  position: relative; }
+[class*=rc-border]:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 400%;
+  -webkit-transform: scale(0.25);
+  transform: scale(0.25);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rc-border:after{  border: 1px solid @color-line;  }
+.rc-border--bm:after{  border-bottom:1px solid @color-line;  }
+.rc-border--tp:after{  border-top:1px solid @color-line;  }
+.rc-border--lt:after{  border-left:1px solid @color-line;  }
+.rc-border--rt:after{  border-right:1px solid @color-line;  }
+.rc-border--ud:after{  border-bottom:1px solid @color-line; border-top:1px solid @color-line; }
+.rc-border--dashed:after{  border-style: dashed;  }
+
+//************************************************************************ 边距和内边距  ****************************************************************************************/
+
+.rc-padding      {  padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;  }
+.rc-padding--lt{  padding-left: 10px;}
+.rc-padding--rt{  padding-right: 10px;}
+.rc-padding--tp{  padding-top: 10px;}
+.rc-padding--bm{  padding-bottom: 10px;}
+.rc-padding--ad{  padding-left:  10px  ; padding-right: 10px  }
+.rc-padding--ud{  padding-top:  10px ;padding-bottom: 10px }
+
+.rc-padding__lg      {  padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;  }
+.rc-padding__lg--lt{  padding-left: 20px;}
+.rc-padding__lg--rt{  padding-right: 20px;}
+.rc-padding__lg--tp{  padding-top: 20px;}
+.rc-padding__lg--bm{  padding-bottom: 20px;}
+.rc-padding__lg--ad{  padding-left:  20px  ; padding-right: 20px  }
+.rc-padding__lg--ud{  padding-top:  20px ;padding-bottom: 20px }
+
+.rc-padding__xl      {  padding-left: 40px; padding-right: 40px; padding-top: 40px; padding-bottom:40px;  }
+.rc-padding__xl--lt{  padding-left: 40px;}
+.rc-padding__xl--rt{  padding-right: 40px;}
+.rc-padding__xl--tp{  padding-top: 40px;}
+.rc-padding__xl--bm{  padding-bottom: 40px;}
+.rc-padding__xl--ad{  padding-left:  40px  ; padding-right: 40px  }
+.rc-padding__xl--ud{  padding-top:  40px ;padding-bottom: 40px }
+
+
+.rc-margin      {  margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;  }
+.rc-margin--lt{  margin-left: 10px;}
+.rc-margin--rt{  margin-right: 10px;}
+.rc-margin--tp{  margin-top: 10px;}
+.rc-margin--bm{  margin-bottom: 10px;}
+.rc-margin--ad{  margin-left:  10px  ; margin-right: 10px  }
+.rc-margin--ud{  margin-top:  10px ;margin-bottom: 10px }
+
+.rc-margin__lg      {  margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;  }
+.rc-margin__lg--lt{  margin-left: 20px;}
+.rc-margin__lg--rt{  margin-right: 20px;}
+.rc-margin__lg--tp{  margin-top: 20px;}
+.rc-margin__lg--bm{  margin-bottom: 20px;}
+.rc-margin__lg--ad{  margin-left:  20px  ; margin-right: 20px  }
+.rc-margin__lg--ud{  margin-top:  20px ;margin-bottom: 20px }

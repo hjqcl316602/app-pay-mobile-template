@@ -1,0 +1,45 @@
+/************************ toast  ****************************/
+.rc-toast {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  padding: 10px;
+}
+.rc-toast__content {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #fff;
+}
+.rc-toast--info {
+  background-color: #1C83E3;
+}
+.rc-toast--warning {
+  background-color: #F1E600;
+}
+.rc-toast--danger {
+  background-color: #F46433;
+}
+[class*=slidedown-] {
+  transition: all .6s;
+}
+.slidedown-enter,
+.slidedown-appear {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.slidedown-enter-active,
+.slidedown-appear-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slidedown-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slidedown-exit-active {
+  transform: translateY(-100%);
+  opacity: 0;
+}

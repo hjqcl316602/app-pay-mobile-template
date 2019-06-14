@@ -1,0 +1,91 @@
+
+
+
+/************************ loading  动画 ****************************/
+
+.rc-loading__outer {
+  position: fixed; 
+  left:50%;top:50%;
+  transform: translate(-50%,-50%);
+  z-index:10000
+}
+
+.rc-loading{
+
+}
+
+.rc-loading__group{
+  display: flex;
+}
+
+.rc-loading__loader{
+  width:24px;height:24px;background: #fff;display: inline-block;
+  animation:  show 2s linear infinite alternate;
+}
+
+.rc-loading__loader + .rc-loading__loader {
+  margin-left:5px;
+}
+
+.rc-loading__group + .rc-loading__group{
+  margin-top:5px;
+}
+
+.rc-loading__loader.one { 
+  animation-delay: 0s;
+}
+.rc-loading__loader.two { 
+  animation-delay: 0.5s;
+}
+.rc-loading__loader.four{ 
+  animation-delay: 1s;
+}
+.rc-loading__loader.tree { 
+  animation-delay: 1.5s;
+}
+
+
+ 
+@keyframes pulse {
+  from{
+    background: #fff;
+  }
+  50% {
+    
+    background:green;
+  }
+  100% {
+    background: #fff;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0.2;
+  }
+  50%{
+    opacity: 1;
+  }
+  to{
+    opacity: 0.2;
+  }
+}
+//*** loading 动画  ***/
+[class*=fade-]{
+  transition: opacity .3s ease-in-out;
+}
+.fade-enter,.fade-appear{
+  opacity: 0; 
+}
+.fade-enter-active,.fade-appear-active{
+  opacity: 1; 
+  
+}
+
+// 必须这样写的哈，不能合并
+
+.fade-exit{
+  opacity: 1; 
+}
+.fade-exit-active{
+  opacity: 0; 
+}
